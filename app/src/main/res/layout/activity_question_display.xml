@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+
+    tools:context=".QuestionDisplayBio">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:gravity="center">
+         <TextView
+             android:layout_marginTop="8dp"
+             android:id="@+id/Questiondisp"
+             android:layout_width="350dp"
+             android:layout_height="wrap_content"
+             tools:text="Type Your Question Here"
+             android:textStyle="bold"
+             android:textColor="@color/black"
+             android:textSize="32dp"
+             android:gravity="center"/>
+
+         <ImageView
+             android:id="@+id/imagedisp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             tools:src="@drawable/bioq1"
+             android:layout_marginTop="16dp"/>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+         <ProgressBar
+             android:id="@+id/progressbardisp"
+             android:layout_width="330dp"
+             android:layout_height="wrap_content"
+             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+             android:minHeight="50dp"
+             android:progress="0"
+             android:max="10"/>
+         <TextView
+             android:id="@+id/countdisp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             tools:text="10/10"
+             android:layout_marginTop="18dp"
+             android:textSize="20dp"
+             android:textStyle="bold"
+             android:textColor="@color/black"/>
+      </LinearLayout>
+
+      <TextView
+          android:padding="8dp"
+          android:id="@+id/option1disp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:text="Option1"
+          android:gravity="center"
+          android:textSize="32dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:layout_marginBottom="4dp"
+          android:textColor="#ced4da"/>
+      <TextView
+          android:layout_marginBottom="4dp"
+          android:padding="8dp"
+
+          android:id="@+id/option2disp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:text="Option2"
+          android:gravity="center"
+          android:textSize="32dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:textColor="#ced4da"/>
+      <TextView
+          android:layout_marginBottom="4dp"
+          android:padding="8dp"
+
+          android:id="@+id/option3disp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:text="Option3"
+          android:gravity="center"
+          android:textSize="32dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:textColor="#ced4da"/>
+      <TextView
+          android:padding="8dp"
+          android:id="@+id/option4disp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:text="Option4"
+          android:gravity="center"
+          android:textSize="32dp"
+          android:layout_marginLeft="8dp"
+          android:layout_marginRight="8dp"
+          android:textColor="#ced4da"/>
+         <Button
+             android:padding="8dp"
+             android:id="@+id/btndisp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             tools:text="Click me"
+             android:textSize="22dp"
+             android:textStyle="bold"
+             android:layout_weight="1"
+             android:layout_marginTop="24dp"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="8dp"/>
+
+      <ImageView
+          android:layout_marginTop="16dp"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:src="@drawable/hintimg"
+          android:id="@+id/hintimage"/>
+      <TextView
+          android:padding="16dp"
+          android:id="@+id/hinttext"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="20dp"
+          android:textColor="@color/black"
+          tools:text="Check Image"
+          android:gravity="center"
+          android:background="#dee2e6"/>
+   </LinearLayout>
+
+
+</ScrollView>
