@@ -12,7 +12,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 
-class QuestionDisplayBio : AppCompatActivity(),View.OnClickListener {
+class QuestionDisplay : AppCompatActivity(),View.OnClickListener {
     private var progressBar:ProgressBar?=null
     private var tvProgress: TextView? = null
     private var tvQuestion:TextView? = null
@@ -24,7 +24,7 @@ class QuestionDisplayBio : AppCompatActivity(),View.OnClickListener {
     private var buttonSubmit:Button? = null
     private var hintimgd:ImageView?=null
     private var tv:TextView?=null
-
+    private var index=0
 
     private var mCurrentPosition: Int = 1 // Default and the first question position
     private var mQuestionsList: ArrayList<QuestionList>? = null
@@ -37,6 +37,9 @@ class QuestionDisplayBio : AppCompatActivity(),View.OnClickListener {
 
         //Get the NAME from intent and assign it the variable
         mUserName = intent.getStringExtra("USER_NAME1")
+        index=intent.getIntExtra("Value",0)
+
+
         //connect to the view by its id
         progressBar=findViewById(R.id.progressbardisp)
         tvProgress = findViewById(R.id.countdisp)
@@ -47,7 +50,7 @@ class QuestionDisplayBio : AppCompatActivity(),View.OnClickListener {
         tvOptionThree = findViewById(R.id.option3disp)
         tvOptionFour = findViewById(R.id.option4disp)
         buttonSubmit = findViewById(R.id.btndisp)
-        mQuestionsList = content.getQuestionBio()
+        ChooseCardview()
         hintimgd=findViewById(R.id.hintimage)
         tv=findViewById(R.id.hinttext)
         mQuestionsList=randomfn(mQuestionsList!!)
@@ -287,5 +290,31 @@ class QuestionDisplayBio : AppCompatActivity(),View.OnClickListener {
         }
         return mql
     }
+    fun ChooseCardview()
+    {
+        when(index)
+        {
+            1->
+            {
+                mQuestionsList = content.getQuestionBio()
+            }
+            2->
+            {
+                mQuestionsList = content.getQuestionBio()
+            }
+            3->{
+                mQuestionsList = content.getQuestionPhysics()
+            }
+            4->{
+                mQuestionsList = content.getQuestionPhysics()
+            }
+            5->{
+                mQuestionsList = content.getQuestionPhysics()
+            }
+            6->{
+                mQuestionsList = content.getQuestionPhysics()
+            }
+        }
 
+    }
 }

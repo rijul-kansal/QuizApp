@@ -140,4 +140,121 @@ object content {
         ))
        return arrlis
     }
+
+    fun getQuestionPhysics():ArrayList<QuestionList>
+    {
+        var arrlis=ArrayList<QuestionList>()
+
+        arrlis.add(QuestionList(
+            "Which of the following materials will be attracted to a magnet?",
+            R.drawable.phyq1,
+            "Plastic","Mud",
+        "Iron","Cotton", 3,
+            "This material used to make bridges,houses"
+        ))
+        arrlis.add(QuestionList(
+            "Gravity is the force which pulls things down to Earth. What is true about the force of gravity on the moon compared to Earth?",
+            R.drawable.phyq2,
+            "It is weaker.","It is stronger.",
+            "There is no gravity on the Moon at all."," It is the same.",
+            1,
+            "She is still weak after her illness. co-relate with options"
+        ))
+        arrlis.add(QuestionList(
+            "Breaking the barrier of the speed of ____ causes the phenomenon known as the sonic boom.",
+            R.drawable.phyq3,
+            "Lion","Light",
+            "Lepard","Sound", 4,
+            "Co-Relate with the image"
+        ))
+        arrlis.add(QuestionList(
+            "Which body in our Solar System was once classified as a planet, but isn't any more?",
+            R.drawable.phyq4,
+            "Uranus","Mars",
+            "Jupiter","Venus", 1,
+            "This planet is fartest from the sun"
+        ))
+        arrlis.add(QuestionList(
+            "What was the name of the man who shouted 'Eureka' when he got into the bath?",
+            R.drawable.phyq5,
+            " Isaac Newton"," Leonardo da Vinci",
+            "Archimedes","Harry Potter", 3,
+            "Who Gave the Theory of Buoyancy"
+        ))
+        arrlis.add(QuestionList(
+            "Which of the following substances acts as an insulator to (stops) the path of electricity?",
+            R.drawable.phyq6,
+            "Plastic","Plastic",
+            "Iron","Rubber", 4,
+            "This Substance used to make Tyres"
+        ))
+        arrlis.add(QuestionList(
+            "\n" +
+                    "When light bends as it enters a different medium the process is known as what?",
+            R.drawable.phyq7,
+            "Refraction","Reflection",
+            "Transmission","Non Of these", 1,
+            "See Image"
+        ))
+        arrlis.add(QuestionList(
+                    "A magnifying glass is what type of lens?",
+            R.drawable.phyq8,
+            "Concave","Convex",
+            "Transparent","Non of these", 2,
+            "this type of mirror ued as Rear view mirror"
+        ))
+        arrlis.add(QuestionList(
+                    "Electric resistance is typically measured in what units?",
+            R.drawable.phyq9,
+            "R","Ohm",
+            "Sec","C/g", 2,
+            "Unit Used bt this formula also R/V"
+        ))
+        arrlis.add(QuestionList(
+            "\n" +
+                    "What is the first name of the famous scientist who gave us Newton’s three laws of motion?",
+            R.drawable.phyq10,
+            "Issac","Archimedes",
+            "Harry Potter","Charles darwin", 1,
+            "See image"
+        ))
+        arrlis.add(QuestionList(
+                    "Electric power is typically measured in what units?",
+            R.drawable.phyq11,
+            "OHMS","R",
+            "SEC","Watts", 4,
+            "Sount similar to whats"
+        ))
+        arrlis.add(QuestionList(
+            "Theoretical physicist James Maxwell was born in what country?",
+            R.drawable.phyq12,
+            "Scotland","Finland",
+            "America","India", 31,
+            "Suffix is Land"
+        ))
+        arrlis.add(QuestionList(
+                    "The most recognized model of how the universe begun is known as the?",
+            R.drawable.phyq13,
+            "Big Bang","Inflationary Big Bang",
+            "The flat Earth","the geocentric model", 1,
+            "See Image"
+        ))
+        arrlis.add(QuestionList(
+                    "Who is the Hubble Space Telescope named after?",
+            R.drawable.phyq14,
+            "Edwin Hubble","John Hubble",
+            "Issac Newton ","Harry Potter", 1,
+            "Suffic is Hubble"
+        ))
+        arrlis.add(QuestionList(
+                    "Earth is located in which galaxy?",
+            R.drawable.phyq15,
+            "Milky Way","Whirlpool Galaxy",
+                    "Sunflower Galaxy",
+                    "Black Eye Galaxy", 1,
+            "Name of Galaxy is related to one of the dairy product"
+        ))
+        return arrlis
+
+    }
 }
