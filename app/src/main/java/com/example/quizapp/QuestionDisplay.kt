@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -24,8 +25,10 @@ class QuestionDisplay : AppCompatActivity(),View.OnClickListener {
     private var buttonSubmit:Button? = null
     private var hintimgd:ImageView?=null
     private var tv:TextView?=null
+    private var timerd:TextView?=null
     private var index=0
-
+    private var t:CountDownTimer?=null
+    private var timerout=0
     private var mCurrentPosition: Int = 1 // Default and the first question position
     private var mQuestionsList: ArrayList<QuestionList>? = null
     private var mCorrectAnswers: Int = 0
@@ -50,9 +53,10 @@ class QuestionDisplay : AppCompatActivity(),View.OnClickListener {
         tvOptionThree = findViewById(R.id.option3disp)
         tvOptionFour = findViewById(R.id.option4disp)
         buttonSubmit = findViewById(R.id.btndisp)
-        ChooseCardview()
         hintimgd=findViewById(R.id.hintimage)
         tv=findViewById(R.id.hinttext)
+        timerd=findViewById(R.id.timerdisp)
+        ChooseCardview()
         mQuestionsList=randomfn(mQuestionsList!!)
         setQuestion()
 
@@ -76,7 +80,7 @@ class QuestionDisplay : AppCompatActivity(),View.OnClickListener {
      * A function for setting the question to UI components.
      */
     private fun setQuestion() {
-
+        timer()
         val question: QuestionList =
             mQuestionsList!![mCurrentPosition - 1] // Getting the question from the list with the help of current position.
         defaultOptionsView()
@@ -166,14 +170,14 @@ class QuestionDisplay : AppCompatActivity(),View.OnClickListener {
             }
             R.id.btndisp->
             {
-
-                if (mSelectedOptionPosition == 0) {
+                t?.cancel()
+                if (mSelectedOptionPosition == 0 ) {
 
                     mCurrentPosition++
 
                     when {
 
-                        mCurrentPosition <= 10 -> {
+                        mCurrentPosition <= 10-> {
 
                             setQuestion()
                         }
@@ -183,6 +187,7 @@ class QuestionDisplay : AppCompatActivity(),View.OnClickListener {
                                 Intent(this, Result::class.java)
                             intent.putExtra("USER_NAME2", mUserName)
                             intent.putExtra("A",mCorrectAnswers)
+                            mCurrentPosition=0
                             startActivity(intent)
                             finish()
                         }
@@ -316,5 +321,31 @@ class QuestionDisplay : AppCompatActivity(),View.OnClickListener {
             }
         }
 
+    }
+    fun timer()
+    {
+        timerout=0
+        t=object : CountDownTimer(10000, 1000)
+        {
+
+            override fun onTick(millisUntilFinished: Long)
+            {
+                timerd?.setText("" + (millisUntilFinished / 1000+1))
+            }
+
+            override fun onFinish() {
+                mCurrentPosition++
+                if(mCurrentPosition>10)
+                {
+                    mCurrentPosition=0
+                    val intent = Intent(this@QuestionDisplay, Result::class.java)
+                    intent.putExtra("USER_NAME2", mUserName)
+                    intent.putExtra("A",mCorrectAnswers)
+                    startActivity(intent)
+                    finish()
+                }
+                setQuestion()
+            }
+        }.start()
     }
 }

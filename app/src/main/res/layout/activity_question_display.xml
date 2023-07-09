@@ -116,12 +116,32 @@
              android:layout_marginLeft="8dp"
              android:layout_marginRight="8dp"/>
 
-      <ImageView
-          android:layout_marginTop="16dp"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:src="@drawable/hintimg"
-          android:id="@+id/hintimage"/>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+         <ImageView
+             android:id="@+id/hintimage"
+             android:layout_width="60dp"
+             android:layout_height="60dp"
+             android:layout_marginLeft="40dp"
+             android:layout_marginTop="16dp"
+             android:src="@drawable/hintimg" />
+            <TextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/timerdisp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="113dp"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="42dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="00:00" />
+      </LinearLayout>
+
       <TextView
           android:padding="16dp"
           android:id="@+id/hinttext"
@@ -129,9 +149,7 @@
           android:layout_height="wrap_content"
           android:textSize="20dp"
           android:textColor="@color/black"
-          tools:text="Check Image"
-          android:gravity="center"
-          android:background="#dee2e6"/>
+          android:gravity="center"/>
    </LinearLayout>
 
 

@@ -23,6 +23,7 @@ class Result : AppCompatActivity() {
         finish_btn.setOnClickListener {
             var intent= Intent(this,Mainactivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
